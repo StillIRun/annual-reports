@@ -839,7 +839,7 @@ body,
 input,
 select,
 textarea {
-  font-family: 'Roboto', 'San Francisco', helvetica, arial, sans-serif;
+  font-family: 'Barlow', 'San Francisco', helvetica, arial, sans-serif;
   font-size: 62.5%; }
 
 body,
@@ -1115,7 +1115,7 @@ h3 [class*='bg-'] {
 /* -- Serif -- */
 .text-serif,
 h1 span {
-  font-family: 'Maitree', times, serif; }
+  font-family: 'Bitter', times, serif; }
 
 /* -- h1,h2... Promo/Landings -- */
 .text-landing {
