@@ -1,0 +1,95 @@
+@property --ring-label {
+  syntax: "<string>";
+  initial-value: " ";
+  inherits: true;
+}
+
+@property --ring-rotate-end {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --count {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --count-to {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.charts-css.pie.animate tbody tr td {
+  --ring-rotate-end: var(--end);
+  background: conic-gradient(
+    transparent 0 calc(1turn * var(--start)),
+    var(--c, transparent) calc(1turn * var(--start, 0)) calc(1turn * var(--ring-rotate-end)),
+    transparent calc(1turn * var(--ring-rotate-end)) 1turn);
+
+  animation: spin 1s ease-in; /* fallback for when animation range and timeline are not supported; must be defined before*/
+}
+
+.charts-css.pie.ring tbody tr td {
+  container-type: inline-size;
+  container-name: ring;
+}
+
+.charts-css.pie.ring tbody tr td:after {
+  content: var(--ring-label);
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  border-radius: 50%;
+  width: 60%;
+  height: 60%;
+  font-size: 1.8rem;
+  background-color: var(--chart-bg-color);
+}
+@container ring (min-width: 125px) {
+  .charts-css.pie.ring tbody tr td:after {
+    font-size: 2.4rem;
+  }
+}
+@container ring (min-width: 150px) {
+  .charts-css.pie.ring tbody tr td:after {
+    font-size: 3rem;
+  }
+}
+
+@keyframes spin {
+  from {
+    --ring-rotate-end: var(--start);
+  }
+  to {
+    --ring-rotate-end: var(--end);
+  }
+}
+
+.metrics.animation li span {
+  --count: var(--count-to);
+  counter-reset: count var(--count);
+}
+.metrics.animation li.animate span {
+  animation: count-up 1s ease-in-out;
+  counter-reset: count var(--count);
+}
+
+.metrics.animation li.animate span:before {
+  content: counter(count) var(--counter-suffix, "");
+}
+
+@keyframes count-up {
+  from {
+    --count: 0;
+  }
+  to {
+    --count: var(--count-to);
+  }
+}
