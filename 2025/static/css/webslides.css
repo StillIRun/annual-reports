@@ -1371,14 +1371,14 @@ header[role='banner'] {
   text-transform: lowercase; }
   .logo a {
     background: url("../images/logos/logo.png") no-repeat 0 0;
-    background-size: 4.8rem;
+    background-size: 6rem;
     float: left;
-    height: 4.8rem;
+    height: 6rem;
     text-indent: -4000px;
     /*If you remove text-indent and add: */
     /*padding-left: 6rem;*/
     vertical-align: middle;
-    width: 4.8rem; }
+    width: 6rem; }
 
 /*=========================================
 4. Navigation
@@ -3463,6 +3463,11 @@ nav[role='navigation'] li a {
   nav[role='navigation'] li a:hover {
     background-color: rgba(50, 50, 50, 0.7); }
 
+nav li svg.icon {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.125em;
+}
 nav li.twitter a:hover {
   background-color: #1da1f3; }
 
