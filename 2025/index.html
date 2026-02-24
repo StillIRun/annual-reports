@@ -382,42 +382,42 @@
         <ul class="flexblock metrics specs animation">
           <li>
             <div>
-                <h2><span class="text-serif" style="--count-to: 210; min-width: 150px;"></span>
+                <h2><span class="text-serif" style="--count-to: 210; min-width: 150px;" data-count="210"></span>
                 Ambassadors across 43 States</h2>
                 sharing lived experience and leading with vulnerability.
             </div>
           </li>
           <li>
             <div>
-                <h2><span class="text-serif" style="--count-to: 10; min-width: 150px;"></span>
+                <h2><span class="text-serif" style="--count-to: 10; min-width: 150px;" data-count="10"></span>
                 Local Run Chapters</h2>
                 hosting regular group runs that prioritize mental health.
             </div>
           </li>
           <li>
             <div>
-                <h2><span class="text-serif" style="--count-to: 56; min-width: 150px;"></span>
+                <h2><span class="text-serif" style="--count-to: 56; min-width: 150px;" data-count="56"></span>
                 Starting Line Scholarship participants</h2>
                 took part in three in-person cohorts; two in Grand Rapids, MI and one in Tacoma, WA.
             </div>
           </li>
           <li>
             <div>
-                <h2><span class="text-serif" style="--count-to: 185; min-width: 150px;"></span>
+                <h2><span class="text-serif" style="--count-to: 185; min-width: 150px;" data-count="185"></span>
                 Mental Health Runner participants were supported</h2>
                 through our self-guided virtual program, an increase over 700% from our 2024 pilot.
             </div>
           </li>
           <li>
             <div>
-                <h2><span class="text-serif" style="--count-to: 101; min-width: 150px;"></span>
+                <h2><span class="text-serif" style="--count-to: 101; min-width: 150px;" data-count="101"></span>
                 Team Still I Run athletes (a 20% increase from 2024) across 6 races</h2>
                 raising critical funds while using endurance sports to advocate for mental health.
             </div>
           </li>
           <li>
             <div>
-                <h2><span class="text-serif" style="--count-to: 1612; min-width: 150px;"></span>
+                <h2><span class="text-serif" style="--count-to: 1612; min-width: 150px;" data-count="1612"></span>
                 Runners connected across the world</h2>
                 through our virtual and in-person events.
             </div>
@@ -1417,7 +1417,13 @@
       document.querySelectorAll(".charts-css.pie.animation").forEach((el) => {
         chartPieAnimation.observe(el)
       })
+    } else {
+      // set --count-to animation to show data-count for reduce motion
+      document.querySelectorAll(".metrics.animation li span").forEach((el) => {
+        el.innerHTML = el.dataset.count
+      })
     }
+
 
     document.querySelectorAll("footer#absolute-footer").forEach((el) => {
       footerNavigation.observe(el)
