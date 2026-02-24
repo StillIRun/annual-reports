@@ -427,7 +427,7 @@
       </section>
 
       <section id="sls" class="bg-brown">
-        <span class="background" style="background-image:url('static/images/backgrounds/sls-1.png')"></span>
+        <span class="background background-center" style="background-image:url('static/images/backgrounds/sls-1.png')"></span>
         <div class="wrap">
           <div style="display:flex;align-items: center;gap:2rem;">
           <img src="static/images/logos/sls.png" title="Starting Line Scholarship Logo" style="max-width: 150px;" />
@@ -438,7 +438,7 @@
         </div>
       </section>
       <section class="bg-brown">
-        <div class="wrap" style="display: flex; align-items: center;;">
+        <div class="wrap">
           <img src="static/images/backgrounds/sls-2.png" class="alignleft size-40" />
           <div>
             <p>In 2025, the Starting Line Scholarship continued to grow in both reach and depth, strengthening 
@@ -673,25 +673,18 @@
         <div class="spacer-lg"></div>
         <div class="wrap">
           <div class="card-60 bg-white">
-            <div id="map" style="width: 700px; height: 500px;"></div>
+            <div id="map" style="width: 100%; min-height: 500px; height: 100%;"></div>
             <script>
 
               let protocol = new pmtiles.Protocol();
               maplibregl.addProtocol("pmtiles", protocol.tile);
                 const map = new maplibregl.Map({
                     container: 'map',
-                    // style: "https://raw.githubusercontent.com/wipfli/foursquare-os-places-pmtiles/refs/heads/main/style.json",
                     style: {
                       "version": 8,
                       glyphs: "https://protomaps.github.io/basemaps-assets/fonts/{fontstack}/{range}.pbf",
                       sprite: `https://protomaps.github.io/basemaps-assets/sprites/v4/light`,
                       sources: {
-                        // protomaps: {
-                        //   type: "vector",
-                        //   url: "pmtiles://https://build.protomaps.com/20251229.pmtiles  ",
-                        //   //https://maps.protomaps.com/#tiles=https://build.protomaps.com/20251229.pmtiles
-                        //   attribution: "<a href='https://openstreetmap.org/copyright'>© OpenStreetMap Contributors</a>"
-                        // },
                         "protomaps": {
                           "type": "vector",
                           "attribution": "<a href=\"https://github.com/protomaps/basemaps\">Protomaps</a> © <a href=\"https://openstreetmap.org\">OpenStreetMap</a>",
@@ -700,14 +693,10 @@
                       },
                       layers: basemaps.layers("protomaps", basemaps.namedFlavor("light"), {lang:"en"}),
                     },
-                    center: [40.648613370437346, -96.41516307547404].reverse(),
+                    center: [-97.380409,39.565735],
                     zoom: 3,
-                    
+                    maxBounds: [-137.370644,7.223865,-57.390175,61.748594],
                 });
-
-                // set max bounds
-                const maxBounds = map.getBounds()
-                map.setMaxBounds(maxBounds)
 
                 const chapters = [
                   [-87.74009396076309, 41.97645134411006],
