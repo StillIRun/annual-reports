@@ -78,6 +78,7 @@
 }
 .metrics.animation li.animate span {
   animation: count-up 1s ease-in-out;
+  -webkit-animation: count-up 1s ease-in-out;
   counter-reset: count var(--count);
 }
 
@@ -86,6 +87,15 @@
 }
 
 @keyframes count-up {
+  from {
+    --count: 0;
+  }
+  to {
+    --count: var(--count-to);
+  }
+}
+
+@-webkit-keyframes count-up {
   from {
     --count: 0;
   }

@@ -1371,14 +1371,14 @@ header[role='banner'] {
   text-transform: lowercase; }
   .logo a {
     background: url("../images/logos/logo.png") no-repeat 0 0;
-    background-size: 4.8rem;
+    background-size: 6rem;
     float: left;
-    height: 4.8rem;
+    height: 6rem;
     text-indent: -4000px;
     /*If you remove text-indent and add: */
     /*padding-left: 6rem;*/
     vertical-align: middle;
-    width: 4.8rem; }
+    width: 6rem; }
 
 /*=========================================
 4. Navigation
@@ -3463,6 +3463,11 @@ nav[role='navigation'] li a {
   nav[role='navigation'] li a:hover {
     background-color: rgba(50, 50, 50, 0.7); }
 
+nav li svg.icon {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.125em;
+}
 nav li.twitter a:hover {
   background-color: #1da1f3; }
 
@@ -3814,7 +3819,7 @@ input[type='submit'],
 .button:hover,
 button[type='submit']:hover,
 input[type='submit']:hover {
-  border: 1px solid #44d; }
+  border: 1px solid #236477; }
 
 button[type='submit'],
 input[type='submit'],
@@ -3822,7 +3827,7 @@ input[type='submit'],
 .button:hover,
 button[type='submit']:hover,
 input[type='submit']:hover {
-  background-color: #44d;
+  background-color: #236477;
   color: #fff;
   text-shadow: 0 1px 0 #123; }
 
@@ -3852,7 +3857,7 @@ input[type='submit']:active {
 
 .bg-white a.button.ghost,
 .bg-gradient-white a.button.ghost {
-  border: 1px solid #44d;
+  border: 1px solid #236477;
   color: #333; }
 
 :disabled,
@@ -3863,7 +3868,7 @@ button:disabled:hover {
 
 fieldset {
   background-color: rgba(0, 20, 80, 0.2);
-  border: 1px solid #44d; }
+  border: 1px solid #236477; }
 
 legend {
   background-color: rgba(0, 0, 0, 0.6);
@@ -3989,6 +3994,11 @@ footer #footer-nav li a {
 @media (min-width: 1024px) {
 .fade-white {
   mask-image: linear-gradient(to left, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 70%);
+}
+}
+@media (min-width: 1024px) {
+.fade-white-right {
+  mask-image: linear-gradient(to right, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 70%);
 }
 }
 
